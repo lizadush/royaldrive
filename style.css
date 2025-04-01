@@ -1,0 +1,366 @@
+.video {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    z-index: 1;    /* класс для расположения видео*/
+}
+.video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;     /* класс для самого видео */
+}   
+.effects {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);      /* класс для полупрозрачного фона видео */
+}
+.video_content {
+    z-index: 2;             /* класс для контента внутри видео */
+    width: 100%;
+}
+.main {
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    background-color: #ffffff;            /* класс для контента вне видео */
+}
+.container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);       /* класс для расположения ссылок-картинок */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+    width: 60vw;
+    height: 80vh;
+}
+.square {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);    /* класс для рамок ссылок-картинок */
+    border-radius: 50px;
+    transition: transform 0.5s;
+}
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;      /* класс для расположения ссылок-картинок в их окнах*/
+}
+.square:hover {
+    transform: scale(1.2);     /* класс для двиганья ссылок-картинок в их окнах*/
+}
+.square:hover img {
+    transform: scale(1.1);     /* класс для двиганья ссылок-картинок в их окнах*/
+}
+.button {
+    background-color: #95af4c00;            /* класс для кнопок этих ваших */
+    border: 1px solid gray;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 2vh;
+    transition-duration: 0.4s;
+    padding: 15px;
+  }
+.button:hover {
+    background-color: #535353;              /* класс для анимации кнопки */
+    color: white;
+  }
+img{
+    margin-top: 1%;
+    display: block;
+    height: 70px;
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttons{
+    
+    width: 70vw;
+    padding-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="submit"]{
+    color:rgb(255, 255, 255);
+    background-color: rgba(116, 116, 116, 0);
+    height: 50px;
+    width: 380px;
+    padding-left: 1vw;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.5cm;
+}
+input[type="email"]{
+    color:rgb(255, 255, 255);
+    background-color: rgba(116, 116, 116, 0);
+    height: 50px;
+    width: 380px;
+    padding-left: 1vw;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.5cm;
+}
+select{
+    color:rgb(160, 160, 160);
+    background-color: rgba(116, 116, 116, 0);
+    height: 50px;
+    width: 380px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.5cm;
+    padding-left: 1vw;
+    color: #aaa; /* Цвет текста */
+    font-style: italic; /* Наклонный шрифт */
+    font-size: 0.4cm;
+}
+.form {
+    border: 3px solid gray;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 10%;
+    padding: 30px;
+    background-color: rgba(53, 53, 53, 0.514);
+  }
+textarea{
+    color:rgb(255, 255, 255);
+    background-color: rgba(116, 116, 116, 0);
+    height: 200px;
+    padding-left: 1vw;
+    width: 380px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.5cm;
+}
+textarea::placeholder{
+    padding-top: 1vh;
+    color: #aaa; /* Цвет текста */
+    font-style: italic; /* Наклонный шрифт */
+    font-size: 0.4cm;
+}
+input::placeholder {
+    color: #aaa; /* Цвет текста */
+    font-style: italic; /* Наклонный шрифт */
+    font-size: 0.4cm;}
+h1{
+    color:rgb(56, 56, 56);
+    text-align: center;
+    font-family: fantasy;
+    font-size: 1cm;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+h2{
+    color:rgb(209, 209, 209);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+}
+h3{
+    color:rgb(247, 247, 247); 
+    text-align: center;
+    font-family: fantasy;
+    font-weight: 100;
+    font-size: 0.9cm;
+    margin: 1vh 0 1vh 0;
+}
+h4{
+    font-size: 2cm;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #fffffff3;
+    margin-top: 20%;
+    font-weight: 100;
+}
+h5{
+    color:rgb(56, 56, 56);
+    text-align: left;
+    font-family: fantasy;
+    font-size: 1cm;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+span{
+    color:rgb(230, 230, 230);
+    font-family: fantasy;
+    font-size: 0.8cm;
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Остается на месте */
+    z-index: 1; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включает прокрутку, если необходимо */
+    background-color: rgb(0,0,0); /* Черный фон с прозрачностью */
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% сверху и центрирование */
+    padding: 20px;
+    border: 3px solid #888;
+    width: 40%;
+    height: 20%; /* Ширина модального окна */
+}
+
+.close {
+    color: #5a5a5a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mn{
+    width: 40%;
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    padding: 20px;
+    background-color: rgba(53, 53, 53, 0.411);
+}
+
+.mn h1{
+    color: #10bbf0;
+    text-align: left;
+    font-size: 0.7cm;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.mn p{
+    color:rgb(219, 216, 216);
+    text-align: justify;
+    font-size: 0.5cm;
+    font-family:Arial, Helvetica, sans-serif
+}
+.ff{
+    text-align:center;
+    color: #032b68;
+    font-size: 1cm;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:#10bbf0 ;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.hh{
+    background-color: #10bbf0;
+    float: right;
+    margin: 10px 20px 10px 20px;
+    width: 260px;
+    padding: 10px 10px 10px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 30px;
+    font-size: medium;
+}
+figure img {
+  width: 600px;
+  height: 200px;
+}
+figure {
+margin-left: 50px;
+}
+.pupupu{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 2%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 2%;
+}
+.squares {
+    width: 400px;
+    height: 430px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .squares img {
+    margin-top: 0;
+    height: 300px;
+    border-radius: 20px;
+    width: 400px;
+  }
+  .buttonu {
+    background-color: #636363; /* класс для кнопок этих ваших */
+    border: 1px solid gray;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+    transition-duration: 0.4s;
+    margin: 10px;
+  }
+  .buttonu:hover {
+    background-color: #1f1f1f;
+  }
+  .flex {
+    display: flex;
+  }
+  table.iksweb{
+    width: 100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    height: auto;
+}
+
+table.iksweb td,table.iksweb th {
+    padding: 10px;
+    width: 30px;
+    height: 35px;
+}
+td{
+    padding-right: 30px;
+}
+.menu{
+    position: absolute;
+    top: 0;
+  }
+.buttonh{
+    padding-left: 11vw;
+    margin: 20px 0px 0px 10px;
+    width: 340px;
+    border-top: 1px solid #c0c0c0;
+    padding-top: 20px;
+  }

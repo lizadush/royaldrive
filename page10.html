@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cars</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000),
+          url(page4_background.jpg);
+        background-size: 1920px 600px;
+        background-repeat: no-repeat;
+      }
+      
+      h4 {
+        top: -100px;
+        text-align: center;
+      }
+      h1{
+        color: #292929;
+        font-size: 0.7cm;
+        text-align: left;
+      }
+    
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        height: auto;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .squares {
+    width: 400px;
+    height: 380px;
+    margin:-10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .squares img {
+    margin-top: 0;
+    height: 300px;
+    width: 400px;
+  }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      } 
+      input[type="number"]{
+        color:rgb(255, 255, 255);
+    background-color: rgba(116, 116, 116, 0);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.5cm;
+      }
+      .buttonh{
+    margin: 2vh auto 1vh auto;
+    width: 58vw;
+    align-self: center;
+  }
+  .forms   {
+    border: 3px solid gray;
+    margin-right: 62%;
+    margin-left: 13%;
+    margin-top: 35%;
+    padding: 30px;
+    background-color: rgba(53, 53, 53, 0.514);
+  }
+  .rightsquares{
+    margin-left: 40%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+    top: 67%;
+  }
+      .filter-section {
+          display: none; /* Скрываем секции по умолчанию */
+          margin: 10px 0;
+      }
+      .filter-title {
+          cursor: pointer;
+          color: rgb(51, 51, 51);
+      }
+      .filter-title1 {
+        color:rgb(230, 230, 230);
+        font-family: fantasy;
+        font-size: 0.8cm;}
+        .pupupu{
+          background-color: black;
+          color: white;
+          font-size: 1;
+          font-family: Arial, Helvetica, sans-serif;
+          padding-top: 2%;
+          padding-left: 15%;
+          padding-right: 10%;
+          padding-bottom: 2%;
+          margin: 1vh;
+          border-radius: 3cqmin;
+          margin-top:5vh ;
+      }
+      h3 {
+          color: rgb(66, 66, 66);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.5cm;
+      }
+      td{
+          margin-top: 2%;
+          width: 40vw;
+      }
+      h2 {
+          color: rgb(117, 117, 117);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.5cm;
+          text-align: left;
+          width: fit-content;
+      }
+      h7{
+          color: #fefefe;
+          font-size: small;
+      } 
+      input::placeholder {
+      color: #aaa; /* Цвет текста */
+      font-style: italic; /* Наклонный шрифт */
+      font-size: 0.4cm;
+      }
+      
+     .tdimg img{
+         width: 50px;
+         height: 50px;
+     }
+     .tdimgg img{
+         width: 175px;
+         height: 175px;
+     }
+     .menu{
+    position: absolute;
+    top: 0;
+    margin-left: 15%;
+  }
+  .buttonr{
+    background-color: #5f5f5f;            /* класс для кнопок этих ваших */
+    border: 1px solid gray;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 2vh;
+    transition-duration: 0.4s;
+    padding: 15px;
+  }
+  .buttonr:hover {
+    background-color: #353535;              /* класс для анимации кнопки */
+    color: white;
+  }
+  .links{
+    margin-top:206vh;
+    margin-left: 43%;
+
+  }
+  a{
+    color: #3f3f3f;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+  }
+  .buttonh{
+         padding-left: 0;
+      margin: 2vh 1vh;
+      width: 99%;}
+
+    </style>
+  </head>
+  <body>
+      <div class="menu">
+        <img src="logo.png" alt="Логотип">
+    
+        <div class="buttonh">
+          <button class="button" onclick="document.location='index.html'">Главная</button>
+            <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+            <button class="button" onclick="document.location='persona.html'">Личный кабинет</button>
+            <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+            <button class="button" onclick="document.location='about_us.html'">О нас</button>
+            <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+            <button class="button" onclick="document.location='news.html'">Новости</button>
+        </div>
+      
+    <h4>Our cars for you</h4></div>
+
+    <div class="forms">
+      
+      <form>
+        <span>Основные фильтры </span><br>
+
+  <h1 class="filter-title" onclick="toggleFilter('car-type-filters')">Тип автомобиля 🠗</h1>
+  <div id="car-type-filters" class="filter-section">
+      <label>
+          <input type="checkbox" name="carType" value="sedan"> Седан
+      </label><br>
+      <label>
+          <input type="checkbox" name="carType" value="coupe"> Купе
+      </label><br>
+      <label>
+          <input type="checkbox" name="carType" value="suv"> Внедорожник
+      </label><br>
+      <label>
+          <input type="checkbox" name="carType" value="minivan"> Минивэн
+      </label><br>
+      <label>
+          <input type="checkbox" name="carType" value="cabriolet"> Кабриолет
+      </label><br>
+  </div>
+
+  <h1 class="filter-title" onclick="toggleFilter('rental-term-filters')">Срок аренды 🠗</h1>
+  <div id="rental-term-filters" class="filter-section">
+      <select name="rentalTerm">
+          <option value="1_day">1 день</option>
+          <option value="1_week">1 неделя</option>
+          <option value="2_weeks">2 недели</option>
+          <option value="3_weeks">3 недели</option>
+          <option value="1_month_or_more">1 месяц и более</option>
+      </select><br>
+  </div>
+
+  <h1 class="filter-title" onclick="toggleFilter('fuel-type-filters')">Тип топлива 🠗</h1>
+  <div id="fuel-type-filters" class="filter-section">
+      <label>
+          <input type="checkbox" name="fuelType" value="petrol"> Бензин
+      </label><br>
+      <label>
+          <input type="checkbox" name="fuelType" value="electric"> Электричество
+      </label><br>
+      <label>
+          <input type="checkbox" name="fuelType" value="diesel"> Дизель
+      </label><br>
+      <label>
+          <input type="checkbox" name="fuelType" value="hybrid"> Гибрид
+      </label><br>
+  </div>
+
+  <h1 class="filter-title" onclick="toggleFilter('brand-filters')">Укажите желаемый бренд 🠗</h1>
+  <div id="brand-filters" class="filter-section">
+      <label>
+          <input type="checkbox" name="carMark" value="bmw"> BMW
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="porshe"> Porshe
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="lamb"> Lamborghini
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="bentley"> Bentley
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="rols"> Rols Royce
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="aston"> Aston Martin
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="mers"> Mercedes
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="ferr"> Ferrari
+      </label><br>
+      <label>
+          <input type="checkbox" name="carMark" value="mclar"> Mclaren
+      </label><br>
+  </div>
+
+  <h1 class="filter-title" onclick="toggleFilter('seats-filters')">Количество мест 🠗</h1>
+  <div id="seats-filters" class="filter-section">
+      <select name="seats">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+
+      </select><br>
+  </div>
+
+  <h1 class="filter-title" onclick="toggleFilter('transmission-filters')">Коробка передач 🠗</h1>
+  <div id="transmission-filters" class="filter-section">
+      <label>
+          <input type="checkbox" name="transmission" value="automatic"> Автоматическая
+      </label><br>
+      <label>
+          <input type="checkbox" name="transmission" value="manual"> Механическая
+      </label><br>
+  </div>
+  <span class="filter-title1" onclick="toggleFilter('additional-filters')">Дополнительные фильтры 🠗</span><br>
+  <div id="additional-filters" class="filter-section">
+      <h1>Цена</h1>
+      <input type=text size=50 name=price_from placeholder="от"><br>
+      <input type=text size=50 name=price_to placeholder="до"><br>
+
+      <h1>Год выпуска</h1>
+      <input type=text size=50 name=year_from placeholder="от"><br>
+      <input type=text size=50 name=year_to placeholder="до"><br>
+
+      <h1>Пробег</h1>
+      <input type=text size=50 name=mileage_to placeholder="до"><br>
+
+      <span>Опции</span><br>
+
+      <label><input type=checkbox name=options value=gps> GPS-навигатор</label><br>
+      <label><input type=checkbox name=options value=child_seat> Детское кресло</label><br>
+      <label><input type=checkbox name=options value=ac> Кондиционер</label><br>
+      <label><input type=checkbox name=options value=bluetooth> Bluetooth</label><br>
+      <label><input type=checkbox name=options value=cruise_control> Круиз контроль</label><br>
+
+      <h1>Страхование</h1>
+      <label><input type=checkbox name=insurance value=full> Полное</label><br>
+      <label><input type=checkbox name=insurance value=partial> Частичное</label><br>
+
+      <!-- Сортировка -->
+      <span>Сортировка</span><br>
+
+      <h1>По цене:</h1>
+      <label><input type=radio name=sort_price value=asc> По возрастанию</label><br>
+      <label><input type=radio name=sort_price value=desc> По убыванию</label><br>
+
+      <h1>По рейтингу:</h1>
+      <label><input type=radio name=sort_rating value=5> 5 звезд</label><br>
+      <label><input type=radio name=sort_rating value=4> 4 звезды</label><br>
+      <label><input type=radio name=sort_rating value=3> 3 звезды</label><br>
+
+      <h1>По новизне:</h1>
+      <label><input type=radio name=newness value=newest> Сначала новые</label><br>
+      <label><input type=radio name=newness value=oldest> Сначала старые</label><br>
+
+      <!-- По местоположению -->
+      <h1>По местоположению:</h1>
+      <label><input type=radio name=location value=10km> В радиусе 10 км</label><br>
+      <label><input type=radio name=location value=20km> В радиусе 20 км</label><br>
+      <label><input type=radio name=location value=50km> В радиусе 50 км</label><br>
+      
+
+    </div><button class="buttonr">Найти!</button></FORM>
+    </div>
+ 
+ 
+ 
+    <div class="rightsquares">
+      <table>
+        <tr>
+             <th>
+                <div class="squares">
+                <img src="bmw_1.webp" alt="Картинка 1" />
+                <div class="flex">
+                    <button class="buttonu" id="openModal1">Характеристики</button>
+                    
+                    <button class="buttonu" onclick="document.location='orders.html'">
+                    Оформить заказ
+                    </button>
+                </div>
+                </div>  
+            </th>
+        <th>
+             <div class="squares">
+                    <img src="bentley_3.webp" alt="Картинка 3" />
+                    <div class="flex">
+                        <button class="buttonu" id="openModal3">Характеристики</button>
+                        
+                        <button class="buttonu" onclick="document.location='orders.html'">
+                        Оформить заказ
+                        </button>
+                    </div>
+            </div>
+      </th>
+    </tr>
+    
+    <tr>
+        <td>
+            <div class="squares">
+                    <img src="bmw_2.webp" alt="Картинка 2" />
+                    <div class="flex">
+                        <button class="buttonu" id="openModal2">Характеристики</button>
+                        
+                        <button class="buttonu" onclick="document.location='orders.html'">
+                        Оформить заказ
+                        </button>
+                    </div>
+             </div>
+        </td>
+    
+         <td>
+          <div class="squares">
+                    <img src="bentley_4.png" alt="Картинка 4" />
+                    <div class="flex">
+                            <button class="buttonu" id="openModal4">Характеристики</button>
+                            
+                            <button class="buttonu" onclick="document.location='orders.html'">
+                            Оформить заказ
+                            </button>
+                    </div>
+            </div>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <div class="squares">
+                        <img src="mclaren_1.jpeg" alt="Картинка 1" />
+                <div class="flex">
+                        <button class="buttonu" id="openModal1">Характеристики</button>
+            
+                        <button class="buttonu" onclick="document.location='orders.html'">
+                        Оформить заказ
+                        </button>
+                </div>
+            </div>
+        </td>
+    
+        <td>
+            <div class="squares">
+                <img src="mclaren_2.webp" alt="Картинка 2" />
+                <div class="flex">
+                    <button class="buttonu" id="openModal2">Характеристики</button>
+                    
+                    <button class="buttonu" onclick="document.location='orders.html'">
+                    Оформить заказ
+                    </button>
+                 </div>
+             </div>
+        </td>
+    </tr>
+    
+    <tr><td><div class="squares">
+      <img src="mclaren_3.jpg" alt="Картинка 3" />
+      <div class="flex">
+        <button class="buttonu" id="openModal3">Характеристики</button>
+        
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div></td>
+    
+    <td><div class="squares">
+      <img src="mclaren_4.png" alt="Картинка 4" />
+      <div class="flex">
+        <button class="buttonu" id="openModal4">Характеристики</button>
+        
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div></td></tr>
+    
+    <tr><td>
+      <div class="squares">
+            <img src="bentley_1.jpg" alt="Картинка 1" />
+            <div class="flex">
+              <button class="buttonu" id="openModal1">Характеристики</button>
+              
+              <button class="buttonu" onclick="document.location='orders.html'">
+                Оформить заказ
+              </button>
+            </div>
+          </div></td>
+    
+          <td><div class="squares">
+            <img src="bmw_4.jpeg" alt="Картинка 4" />
+            <div class="flex">
+              <button class="buttonu" id="openModal4">Характеристики</button>
+              
+              <button class="buttonu" onclick="document.location='orders.html'">
+                Оформить заказ
+              </button>
+            </div>
+          </div></tr></td>
+    
+    
+          <tr><td><div class="squares">
+          <img src="bentley_2.jpeg" alt="Картинка 2" />
+          <div class="flex">
+            <button class="buttonu" id="openModal2">Характеристики</button>
+            
+            
+            <button class="buttonu" onclick="document.location='orders.html'">
+              Оформить заказ
+            </button>
+          </div>
+        </div></td>
+    
+        <td><div class="squares">
+          <img src="bmw_3.webp" alt="Картинка 3" />
+          <div class="flex">
+            <button class="buttonu" id="openModal3">Характеристики</button>
+            
+            <button class="buttonu" onclick="document.location='orders.html'">
+              Оформить заказ
+            </button>
+          </div>
+        </div></td></tr>
+      </table>
+    </div>
+
+    <div class="links">
+        <a href="page10.html">На первую</a>
+        <a href="page10.html">1</a>
+        <a href="page11.html">2</a>
+        <a>...</a>
+        <a href="page13.html">4</a>
+        <a href="page13.html">На последнюю</a>
+    </div>
+
+    <footer class="pupupu">
+      <table>
+          <tr>
+              <th>
+                  <img align="left" src="logo.png" alt="Логотип">
+              </th>
+              <th>
+                  <h2>
+                      Наши бренды
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Полезные ссылки
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Связаться с нами
+                  </h2>
+              </th>
+          </tr>
+          <tr>
+              <td align="left">
+                  <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                       для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                        тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+              </td>
+              <td align="left">
+                  
+                  <a href="page4.html"> Bentley </a><br><br>
+                  <a href="page1.html"> Mclaren </a><br><br>
+                  <a href="page2.html"> Mercedes </a><br><br>
+                  <a href="page8.html"> Porshe </a><br><br>
+                  <a href="page7.html"> Lamborghini </a><br><br>
+                  <a href="page3.html"> BMW </a><br><br>
+                  <a href="page6.html"> Ferrari </a><br><br>
+
+              </td>
+              <td align="left">
+                  <a href="index.html"> Представленные марки </a><br><br>
+                  <a href="news.html"> Новости </a><br><br>
+                  <a href="about_us.html"> О нас </a><br><br>
+                  <a href="persona.html"> Личный кабинет </a><br><br>
+                  <a href="orders.html"> Оформление заказа </a><br><br>
+                  <a href="maps.html"> Наши офисы </a><br><br>
+                  <a href="special.html"> Специальные предложения </a><br><br>
+              </td>
+              <td align="left">
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a href="about_us.html"> О нас </a><br><br>
+                      <a href="persona.html"> Личный кабинет </a><br><br>
+              </td>
+          </tr>
+      </table>
+
+      <table>
+          <tr >
+              <td class="tdimgg">
+                  <img align="left" src="logo24_7.jpg" alt="Логотип">
+              </td>
+              <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+              <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+              <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+              <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+              <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+              <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+          </tr>
+      </table>
+      
+      <table>
+              <tr>
+                  <td>
+                      <h7>Политика конфиденциальности<h7>
+                  </td>
+                  <td>
+                      <h7>@2025 Аренда автомобилей класса люкс. Все права защищены.</h7>
+                  </td>
+                  <td><h7> Instagram </h7>
+                      <h7> VK </h7>
+                      <h7> YouTube </h7>
+                  </td>
+              </tr>
+      </table>
+  <div>
+  </footer>
+  <script>function toggleFilter(filterId) {
+    const filterSection = document.getElementById(filterId);
+    // Меняем стиль отображения в зависимости от текущего состояния
+    if (filterSection.style.display === "block") {
+        filterSection.style.display = "none"; // Сворачиваем секцию
+    } else {
+        filterSection.style.display = "block"; // Разворачиваем секцию
+    }
+}
+</script>
+<script src="dialog.js"></script>
+  </body>
+</html>

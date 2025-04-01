@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Личный кабинет</title>
+    <style>
+
+body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        margin: 0;
+        background-color: #d1d1d1;
+        margin-top: 20%;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000),
+          url(special_background.jpg);
+        background-size: 1920px 400px;
+        background-repeat: no-repeat;
+      }
+      .buttonh{
+         padding-left: 0;
+      margin: 2vh 1vh;
+      width: 99%;}
+        .containera {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5%;
+            padding-left: 15%;
+            padding-right: 15%;
+            margin-bottom: 5%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #555;
+        }
+        .order-list, .penalty-list, .discount-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .order-item, .penalty-item, .discount-item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .settings {
+            display: flex;
+            justify-content: space-between;
+        }
+        .settings a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        td{
+            margin-top: 2%;
+            width: 40vw;
+        }
+        h2 {
+            color: rgb(117, 117, 117);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+        }
+        h4 {
+        position: absolute;
+        top: -100px;
+      }
+        h7{
+            color: #fefefe;
+            font-size: small;
+        }
+        h8{
+          color: #fefefe;
+          font-size: small;
+        }
+        .pupupu{
+            background-color: black;
+            color: white;
+            font-size: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 2%;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+            margin: 1vh;
+            border-radius: 3cqmin;
+        }
+       .tdimg img{
+           width: 50px;
+           height: 50px;
+       }
+       .tdimgg img{
+           width: 175px;
+           height: 175px;
+       }
+       .imm{
+        margin-left: 0;
+       }
+       
+    </style>
+</head>
+<body onload="document.getElementById('loginModal').style.display='block'">
+    <div class="menu">
+        <img src="logo.png" alt="Логотип">
+    
+        <div class="buttonh">
+          <button class="button" onclick="document.location='index.html'">Главная</button>
+          <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+          <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+          <button class="button" onclick="document.location='about_us.html'">О нас</button>
+          <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+          <button class="button" onclick="document.location='news.html'">Новости</button>
+      </div>
+        </div>
+
+        <h4>Личный кабинет</h4>
+
+<div class="containera">
+
+    <div class="profile-header">
+        <img class="imm" src="persona_face.jfif" alt="Фото пользователя">
+        <div>
+            <h2>Иван Иванов</h2>
+            <p>Email: ivan@example.com</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Мои заказы</h2>
+        <ul class="order-list">
+            <li class="order-item">Заказ №12345 - Mercedes-Benz S-Class - Дата: 01.10.2024</li>
+            <li class="order-item">Заказ №12346 - BMW 7 Series - Дата: 15.10.2024</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Настройки</h2>
+        <div class="settings">
+            <a href="#">Изменить пароль</a>
+            <a href="#">Редактировать профиль</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Штрафы</h2>
+        <ul class="penalty-list">
+            <li class="penalty-item">Штраф №54565 - Превышение скорости - Сумма: 500 руб.</li>
+            <li class="penalty-item">Штраф №26543 - Парковка в неположенном месте - Сумма: 300 руб.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Скидки</h2>
+        <ul class="discount-list">
+            <li class="discount-item">Скидка на следующий заказ - 10% (до 31.12.2025)</li>
+        </ul>
+    </div>
+</div>
+
+      <footer class="pupupu">
+        <table>
+            <tr>
+                <th>
+                    <img align="left" src="logo.png" alt="Логотип">
+                </th>
+                <th>
+                    <h2>
+                        Наши бренды
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Полезные ссылки
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Связаться с нами
+                    </h2>
+                </th>
+            </tr>
+            <tr>
+                <td align="left">
+                    <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                         для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                          тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+                </td>
+                <td align="left">
+                    
+                  <a href="page4.html"> Bentley </a><br><br>
+                  <a href="page1.html"> Mclaren </a><br><br>
+                  <a href="page2.html"> Mercedes </a><br><br>
+                  <a href="page8.html"> Porshe </a><br><br>
+                  <a href="page7.html"> Lamborghini </a><br><br>
+                  <a href="page3.html"> BMW </a><br><br>
+                  <a href="page6.html"> Ferrari </a><br><br>
+  
+              </td>
+              <td align="left">
+                  <a href="main.html"> Представленные марки </a><br><br>
+                  <a href="news.html"> Новости </a><br><br>
+                  <a href="about_us.html"> О нас </a><br><br>
+                  <a href="persona.html"> Личный кабинет </a><br><br>
+                  <a href="page10.html"> Оформление заказа </a><br><br>
+                  <a href="maps.html"> Наши офисы </a><br><br>
+                  <a href="special.html"> Специальные предложения </a><br><br>
+              </td>
+              <td align="left">
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a href="about_us.html"> О нас </a><br><br>
+                      <a href="persona.html"> Личный кабинет </a><br><br>
+              </td>
+            </tr>
+        </table>
+  
+        <table>
+            <tr >
+                <td class="tdimgg">
+                    <img align="left" src="logo24_7.jpg" alt="Логотип">
+                </td>
+                <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+                <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+                <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+                <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+                <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+                <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+            </tr>
+        </table>
+        
+        <table>
+                <tr>
+                    <td>
+                      <h8>Политика конфиденциальности<h8>
+                      </td>
+                      <td>
+                          <h8>@2025 Аренда автомобилей класса люкс. Все права защищены.</h8>
+                      </td>
+                      <td><h8> Instagram    VK    YouTube </h8>
+                    </td>
+                </tr>
+        </table>
+    <div>
+    </footer>

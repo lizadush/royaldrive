@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 40px;
+            border: 1px solid #888;
+            width: 300px;
+            height: auto;
+            border-radius: 20px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        input[type="text"], input[type="password"] {
+            color: rgb(46, 46, 46);
+            padding-left: 1vw;
+            background-color: rgba(116, 116, 116, 0);
+            height: 30px;
+            width: 290px;
+            border: 2px solid rgb(102, 102, 102);
+            border-radius: 20px;
+            font-size: 0.5cm;
+        }
+        input[type="email"]{
+            color: rgb(46, 46, 46);
+            padding-left: 1vw;
+            background-color: rgba(116, 116, 116, 0);
+            height: 30px;
+            width: 290px;
+            border: 2px solid rgb(102, 102, 102);
+            border-radius: 20px;
+            font-size: 0.5cm;
+        }
+        input[type="submit"], .toggle-button {
+            color: rgb(51, 51, 51);
+            height: 30px;
+            width: auto;
+            border: 2px solid rgb(102, 102, 102);
+            border-radius: 10px;
+            font-size: 0.5cm;
+            padding-left: 7px;
+            transition: background-color 0.3s ease; /* Анимация */
+        }
+        input[type="submit"]:hover, .toggle-button:hover {
+            background-color: rgba(102, 102, 102, 0.7); /* Темнее при наведении */
+        }
+        h11{
+            color: rgb(53, 53, 53);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2cm;
+            font-weight: 600;
+            text-align: left;
+            width: fit-content;
+        }
+        h3 {
+            color: rgb(66, 66, 66);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+        }
+        td{
+            margin-top: 2%;
+            width: 40vw;
+        }
+        h2 {
+            color: rgb(66, 66, 66);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+        }
+        h7{
+            color: #fefefe;
+            font-size: small;
+        }
+        input::placeholder {
+        color: #aaa; /* Цвет текста */
+        font-style: italic; /* Наклонный шрифт */
+        font-size: 0.4cm;
+        
+        }
+        .pupupu{
+            background-color: black;
+            color: white;
+            font-size: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 2%;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+            margin: 1vh;
+            border-radius: 3cqmin;
+        }
+       .tdimg img{
+           width: 50px;
+           height: 50px;
+       }
+       
+       .tdimgg img{
+           width: 175px;
+           height: 175px;
+       }
+       .faqs{
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 5%;
+            
+        }
+        .image-container {
+            margin-right: 20px;
+        }
+        .imgigi{
+          height: 450px;
+          width: 600px;
+          border-radius: 20px;
+        }
+       .faq-container {
+            max-width: 800px;
+        }
+        .question {
+            cursor: pointer;
+            color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.45cm;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+
+        .faqss{
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #d6964ccc;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 5%;
+            
+        }
+        .image-container {
+            margin-left: 20px;
+        }
+        .imgigi{
+          height: 450px;
+          width: 600px;
+          border-radius: 20px;
+        }
+       .faqss-container {
+            max-width: 600px;
+        }
+        .question {
+            cursor: pointer;
+            color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.45cm;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .txt{
+          width: 80%;
+        }
+        h9{
+          color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+        }
+        .vid {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2%;
+  }
+  .faqsss {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000),
+    url(main_lamb.jpg);
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-position: center; /* Центрируем изображение */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 80vh;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+}
+
+.image-container {
+    margin-left: 20px;
+}
+
+.imgig {
+    height: 350px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.faqs-container {
+    max-width: 600px;
+}
+
+.questions {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+    padding-top: 10px;
+    text-align: left;
+    font-weight: bold;
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.answerss {
+
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+    padding-top: 10px;
+}
+h12{
+    color: rgb(255, 255, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+}
+h13{
+    color: rgb(255, 255, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2cm;
+            font-weight: 600;
+            text-align: left;
+            width: fit-content;
+}
+.faqssss {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000), url(main_mc.jpeg);
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-position: center; /* Центрируем изображение */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 60vh;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.faqssss-container {
+    max-width: 80vw; /* Исправлено с 80wh на 80vw для корректного отображения ширины */
+}
+
+.faqssss-table {
+    width: 100%; /* Задаем ширину таблицы */
+    table-layout: fixed; /* Фиксированная ширина для ячеек */
+}
+
+.faqssss-table td {
+    width: 300px; /* Ширина ячейки */
+    text-align: center; /* Выравнивание текста по центру */
+    vertical-align: middle; /* Вертикальное выравнивание текста по центру */
+}
+
+.bold {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.not_bold {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5cm;
+    padding-top: 10px;
+}
+
+    </style>
+</head>
+<body onload="document.getElementById('loginModal').style.display='block'">
+    <div class="video">
+        <video src="car_background.mp4" type="video/mp4" autoplay muted loop></video>
+        <div class="effects"></div>
+        <div class="video_content">
+            <img src="logo.png" alt="Логотип">
+            <hr size="1" color="#c0c0c0" width=80%>
+            <div class="buttons">
+                <button class="button"><a href="#marks">Представленные марки</a></button>
+                <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+                <button class="button" onclick="document.location='persona.html'">Личный кабинет</button>
+                <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+                <button class="button" onclick="document.location='about_us.html'">О нас</button>
+                <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+                <button class="button" onclick="document.location='news.html'">Новости</button>
+            </div>
+            <h4>Аренда автомобилей класса люкс</h4>
+            <hr size="1" color="#c0c0c0" width=80%>
+        </div>     
+    </div>
+
+    <div class="faqss">
+
+        <div class="faqs-container">
+            <h2>Watch video</h2>
+    
+            <h11>Почему мы?</h11>
+            <div>
+                <div class="question">Никаких обязательств:</div>
+                <div class="answers">Хотите прокатиться на суперкаре? Воплотите эту мечту в реальность с помощью наших услуг по аренде, не заключая долгосрочный договор.</div>
+            </div>
+            <div>
+                <div class="question">Самый большой автопарк и выставочный зал:</div>
+                <div class="answers">Погрузитесь в роскошь, выбрав один из самых больших ассортиментов роскошных автомобилей в России.
+                     Независимо от того, что вам нужно — производительность, комфорт или технологии, — в нашем обширном ассортименте вы найдёте идеальный автомобиль для своих нужд.</div>
+            </div>
+            
+            <div>
+                <div class="question">Гибкие варианты аренды:</div>
+                <div class="answers">Мы учитываем все пожелания и потребности,
+                     независимо от того, необходим ли вам автомобиль на несколько часов или на несколько дней, и обеспечиваем своевременную доставку.</div>
+            </div>
+        </div>
+         
+        <div class="videorasp"><video class="vid" src="car_background.mp4" type="video/mp4" autoplay muted loop></video></div>
+        </div>
+
+    <div class="faqsss">
+
+        <div class="faqss-container">
+    
+            <h13>Роскошные суперкары в России: твой лучший сервис по аренде автомобилей в России</h13><br>
+            <div>
+                <div class="questions">Никаких обязательств:</div>
+                <div class="answerss">Хотите прокатиться на суперкаре? Воплотите эту мечту в реальность с помощью наших услуг по аренде, не заключая долгосрочный договор.</div>
+            </div>
+            <div>
+                <div class="questions">Самый большой автопарк и выставочный зал:</div>
+                <div class="answerss">Погрузитесь в роскошь, выбрав один из самых больших ассортиментов роскошных автомобилей в России.
+                     Независимо от того, что вам нужно — производительность, комфорт или технологии, — в нашем обширном ассортименте вы найдёте идеальный автомобиль для своих нужд.</div>
+            </div>
+            
+            <div>
+                <div class="questions">Гибкие варианты аренды:</div>
+                <div class="answerss">Мы учитываем все пожелания и потребности,
+                     независимо от того, необходим ли вам автомобиль на несколько часов или на несколько дней, и обеспечиваем своевременную доставку.</div>
+            </div>
+        </div>
+         
+        <div class="image-container">
+            <img class='imgig' src="main_lamb.jpg" alt="Фотография" />
+        </div></div>
+
+    <div class="main" id="marks">
+        <div class="container">
+            <a href="page1.html" class="square">
+            <img src="mclaren_logo.png" alt="Картинка 1">
+            </a>
+            <a href="page2.html" class="square">
+            <img src="mercedes_logo.png" alt="Картинка 2">
+            </a>
+            <a href="page3.html" class="square">
+            <img src="bmw_logo.png" alt="Картинка 3">
+            </a>
+            <a href="page4.html" class="square">
+            <img src="bentley_logo.png" alt="Картинка 4">
+            </a>
+            <a href="page9.html" class="square">
+            <img src="rols_logo.jpg" alt="Картинка 5">
+            </a>
+            <a href="page8.html" class="square">
+            <img src="porshe_logo.jpg" alt="Картинка 6">
+            </a>
+            <a href="page7.html" class="square">
+            <img src="lamborgini_logo.jpg" alt="Картинка 7">
+            </a>
+            <a href="page6.html" class="square">
+            <img src="ferrari_logo.jpg" alt="Картинка 8">
+            </a>
+            <a href="page5.html" class="square">
+            <img src="aston_logo.jpg" alt="Картинка 9">
+            </a>
+            </div>
+     </div>
+
+     <div class="faqssss">
+        <div class="faqssss-container">
+            <h13>Какие документы необходимы для аренды автомобиля</h13><br><br><br>
+            <table class="faqssss-table">
+                <tr>
+                    <td class="bold">ВОЗРАСТ</td>
+                    <td class="bold">ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</td>
+                    <td class="bold">БЕСПЛАТНАЯ ДОСТАВКА</td>
+                </tr>
+                <tr>
+                    <td class="not_bold">Вам должно быть не менее 21 года</td>
+                    <td class="not_bold">У вас должны быть действующие водительские права РФ или международное водительское удостоверение</td>
+                    <td class="not_bold">Мы предлагаем нашим клиентам бесплатную доставку в нужное им место</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+     <div class="faqs">
+
+        <div class="image-container">
+            <img class='imgigi' src="lamborghini_6.jpeg" alt="Фотография" />
+        </div>
+        
+        <div class="faq-container">
+            <h2>FAQs</h2>
+    
+            <h11>Все что вам нужно знать о нашем сервисе</h11>
+            
+            <div>
+                <div class="question" onclick="toggleAnswer(1)">Какие ограничения по возрасту при аренде на сайте RoyalDrive.com?</div>
+                <div class="answer" id="answer-1">Возрастной диапазон для получения наших услуг составляет от 21 до 65 лет. Кроме того, мы требуем от наших клиентов наличия действующих водительских прав сроком не менее 1 года.</div>
+            </div>
+        
+            <div>
+                <div class="question" onclick="toggleAnswer(2)">Какие документы меня попросят предоставить при аренде автомобиля?</div>
+                <div class="answer" id="answer-2">Документы, необходимые для аренды роскошных суперкаров в Дубае, включают:  Кредитную карту  Копию паспорта  Копию действующих водительских прав / действующих международных прав.</div>
+            </div>
+        
+            <div>
+                <div class="question" onclick="toggleAnswer(3)">Через какие платежные системы я могу оплатить аренду своего автомобиля?</div>
+                <div class="answer" id="answer-3">У нас есть несколько вариантов оплаты, включая Visa, MasterCard, наличные, American Express, онлайн-банкинг и биткоины.</div>
+            </div>
+
+            <div>
+                <div class="question" onclick="toggleAnswer(4)">Требуется ли мне внести залог при аренде транспортного средства?</div>
+                <div class="answer" id="answer-4">Да, при аренде автомобиля у нас необходимо внести залог. Однако сумма залога и способ его внесения зависят от типа договора.</div>
+            </div>
+        </div>
+        </div>
+        
+     <footer class="pupupu">
+        <table>
+            <tr>
+                <th>
+                    <img align="left" src="logo.png" alt="Логотип">
+                </th>
+                <th>
+                    <h2>
+                        Наши бренды
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Полезные ссылки
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Связаться с нами
+                    </h2>
+                </th>
+            </tr>
+            <tr>
+                <td align="left">
+                    <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                         для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                          тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+                </td>
+                <td align="left">
+                    
+                    <a href="page4.html"> Bentley </a><br><br>
+                    <a href="page1.html"> Mclaren </a><br><br>
+                    <a href="page2.html"> Mercedes </a><br><br>
+                    <a href="page8.html"> Porshe </a><br><br>
+                    <a href="page7.html"> Lamborghini </a><br><br>
+                    <a href="page3.html"> BMW </a><br><br>
+                    <a href="page6.html"> Ferrari </a><br><br>
+
+                </td>
+                <td align="left">
+                    <a href="page4.html"> Представленные марки </a><br><br>
+                    <a href="news.html"> Новости </a><br><br>
+                    <a href="about_us.html"> О нас </a><br><br>
+                    <a href="persona.html"> Личный кабинет </a><br><br>
+                    <a href="page10.html"> Оформление заказа </a><br><br>
+                    <a href="maps.html"> Наши офисы </a><br><br>
+                    <a href="special.html"> Специальные предложения </a><br><br>
+                </td>
+                <td align="left">
+                        <a> +7-(904)-546-34-23 </a><br><br>
+                        <a> +7-(904)-546-34-23 </a><br><br>
+                        <a href="about_us.html"> О нас </a><br><br>
+                        <a href="persona.html"> Личный кабинет </a><br><br>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr >
+                <td class="tdimgg">
+                    <img align="left" src="logo24_7.jpg" alt="Логотип">
+                </td>
+                <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+                <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+                <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+                <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+                <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+                <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+            </tr>
+        </table>
+        
+        <table>
+                <tr>
+                    <td>
+                        <h7>Политика конфиденциальности<h7>
+                    </td>
+                    <td>
+                        <h7>@2025 Аренда автомобилей класса люкс. Все права защищены.</h7>
+                    </td>
+                    <td><h7> Instagram </h7>
+                        <h7> VK </h7>
+                        <h7> YouTube </h7>
+                    </td>
+                </tr>
+        </table>
+    <div>
+    </footer>
+    
+     <script>
+        window.replainSettings = { id: '5f99914a-8d4e-4c0d-9d31-c7fea5ffea5a' };
+        (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+        })('https://widget.replain.cc/dist/client.js');
+    </script>     
+
+    <!-- Модальное окно для входа -->     
+    <div id="loginModal" class="modal">         
+        <div class="modal-content">             
+            <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>             
+            <h2 id="modalTitle">Вход</h2>             
+            <form id="authForm" onsubmit="return validateLogin(event)">                 
+                <div id="loginFields">                     
+                    <label for="regUsername">Логин:</label><br>
+                    <input type="text" id="regUsername" required minlength="3" placeholder="Введите ваш логин" maxlength="20"><br>
+                    <label for="regPassword">Пароль:</label><br>
+                    <input type="password" id="regPassword" required minlength="8" placeholder="Введите ваш пароль"><br><br>
+                    <input type="submit" value="Войти">       
+                    <button type="button" class="toggle-button" onclick="toggleForms()">Зарегистрироваться</button>
+                </div>                 
+            </form>         
+        </div>     
+    </div>
+
+    <!-- Модальное окно для регистрации -->     
+    <div id="registerModal" class="modal">         
+        <div class="modal-content">             
+            <span class="close" onclick="document.getElementById('registerModal').style.display='none'">&times;</span>             
+            <h2 id="modalTitle">Регистрация</h2>             
+            <form id="registerForm" onsubmit="return registerUser(event)">                 
+                <div id="registerFields">                     
+                    <label for="regUsername2">Имя:</label><br>
+                    <input type="text" id="regUsername2" maxlength="25" placeholder="Введите ваше имя" required><br>
+                    <label for="regUsername3">Фамилия:</label><br>
+                    <input type="text" id="regUsername3" maxlength="25" placeholder="Введите вашу фамилию" required><br>
+                    <label for="phoneNumber">Номер телефона:</label><br>
+                    <input type="text" id="phoneNumber" maxlength="12" placeholder="+79000000000" required><br>
+                    <label for="email">Почта:</label><br>
+                    <input type="email" id="email" placeholder="Введите вашу почту" required><br>
+                    <label for="regUsername4">Придумайте логин:</label><br>
+                    <input type="text" id="regUsername4" required minlength="3" placeholder="Логин" maxlength="20"><br>
+                    <label for="regPassword2">Придумайте пароль:</label><br>
+                    <input type="password" id="regPassword2" required minlength="8" placeholder="Пароль"><br><br>
+                    <input type="submit" value="Зарегистрироваться">
+                    <button type="button" class="toggle-button" onclick="toggleForms()">Войти</button>
+                </div>                 
+                             
+            </form>         
+        </div>     
+    </div>
+
+    <script>
+        let lastOpenedAnswer = null;
+    
+      function toggleAnswer(answerId) {
+        const answer = document.getElementById(`answer-${answerId}`); // Исправлено
+    
+        // Закрываем предыдущий открытый ответ
+        if (lastOpenedAnswer && lastOpenedAnswer !== answer) {
+            lastOpenedAnswer.style.display = 'none';
+        }
+    
+        // Переключаем текущий ответ
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            lastOpenedAnswer = null; // Сбрасываем открытый ответ
+        } else {
+            answer.style.display = 'block';
+            lastOpenedAnswer = answer; // Запоминаем открытый ответ
+        }
+    }
+    </script>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Остановить стандартное поведение формы
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+
+            if (username === "admin" && password === "password123") { // Пример проверки
+                alert("Вы успешно вошли в свою учетную запись.");
+                document.getElementById('loginModal').style.display = 'none'; // Закрыть модальное окно
+                return true; // Успешный вход
+            } else {
+                alert("Неверный логин или пароль.");
+                return false; // Ошибка входа
+            }
+        }
+
+        function registerUser(event) {
+            event.preventDefault(); // Остановить стандартное поведение формы
+            alert("Вы успешно зарегистрировались!");
+            document.getElementById('registerModal').style.display = 'none'; // Закрыть модальное окно
+        }
+
+        function toggleForms() {
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            
+            if (loginModal.style.display === 'block') {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            } else {
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Оформление заказа</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+        }
+           
+    </style>
+</head>
+
+<body>
+    <div class="video">
+        <video src="car_background.mp4" type="video/mp4" autoplay muted loop></video>
+        <div class="effects"></div>
+        <div class="video_content">
+            <a href="index.html"><img src="logo.png" alt="Логотип"></a>
+
+            <h3>Оформление заказа</h3>
+            <div class="form">
+                <table>
+                    <tr>
+                        <td>
+                            <form id="orderForm">
+                                <span>Фамилия: </span><br>
+                                <input type="text" id="textInput" onkeypress="return isLetter(event)" required minlength="2" placeholder="Введите вашу фамилию" maxlength="25"><br>
+
+                                <span>Имя: </span><br>
+                                <input type="text" required id="textInput1" onkeypress="return isLetter(event)" placeholder="Введите ваше имя" maxlength="25" minlength="2"><br>
+
+                                <span>Отчество: </span><br>
+                                <input type="text" required id="textInput2" onkeypress="return isLetter(event)" placeholder="Введите ваше отчество" maxlength="25" minlength="2"><br>
+
+                                <span>Укажите вашу почту: </span><br>
+                                <input type="email" required id="emailInput" placeholder="Введите вашу почту" maxlength="256" minlength="2"><br>
+
+                                <span>Дата с: </span><br>
+                                <input type="text" id="dateInput"  placeholder="ДД.ММ.ГГГГ" maxlength="10" required oninput="formatDate(this)"><br>
+
+                                <span>Дата по: </span><br>
+                                <input type="text" id="dateInput1" placeholder="ДД.ММ.ГГГГ" maxlength="10" required oninput="formatDate(this)"><br>
+                        </td>
+                        <td>
+                            <span>Укажите ваш стаж вождения: </span><br>
+                            <select name="experience">
+                                <option value="" disabled selected >Выберите...</option>
+                                <option value="до 1 года">до 1 года</option>
+                                <option value="1-2 года">1-2 года</option>
+                                <option value="3-5 лет">3-5 лет</option>
+                                <option value="5-10 лет">5-10 лет</option>
+                                <option value="10 и более лет">10 и более лет</option>
+                            </select><br><br>
+
+                            <span>Укажите ваш город: </span><br>
+                            <select name="city">
+                                <option value="" disabled selected>Выберите...</option>
+                                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                <option value="Москва">Москва</option>
+                                <option value="Сочи">Сочи</option>
+                                <option value="Новосибирск">Новосибирск</option>
+                                <option value="Владивосток">Владивосток</option>
+                            </select><br><br>
+
+                            <span>Адрес получения заказа: </span><br>
+                            <input type="text" required id="addressInput" onkeypress="validateAddressInput(event)" placeholder="Введите адрес получения заказа" maxlength="500" minlength="10"><br><br>
+
+                            <span>Укажите ваши пожелания: </span><br>
+                            <textarea required id="wishesInput" onkeypress="validateAddressInput(event)" placeholder="Введите ваши пожелания" maxlength="1024" minlength="2"></textarea><br><br>
+
+                            </form>
+
+                            <button class="button" id="submitOrder">Оформить!</button>
+                            <p id="errorMessage" class="error"></p>
+
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h1>Ваш заказ оформлен!</h1>
+                                    <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById('submitOrder');
+        const modal = document.getElementById('myModal');
+        const closeBtn = document.querySelector('.close');
+        const orderForm = document.getElementById('orderForm');
+        const errorMessage = document.getElementById('errorMessage'); // Corrected this line
+
+
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+            if (orderForm.checkValidity()) {
+                orderForm.reset();
+                modal.style.display = "block";
+                errorMessage.textContent = ""; // Очищаем сообщение об ошибке
+            } else {
+                errorMessage.textContent = "Некоторые поля заполнены некорректно. Пожалуйста, заполните все поля правильно.";
+            }
+        });
+
+        // Закрытие модального окна
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+        // Валидация ввода только букв для полей ФИО
+        function isLetter(event) {
+            const char = String.fromCharCode(event.which);
+            return /^[А-Яа-яЁё\s-]+$/.test(char);
+        }
+
+        // Функция для форматирования даты (ДД.ММ.ГГГГ)
+        function formatDate(input) {
+            let value = input.value.replace(/[^\d]/g, ''); // Remove all non-digits
+            if (value.length > 2) {
+                value = value.slice(0, 2) + '.' + value.slice(2);
+            }
+            if (value.length > 5) {
+                value = value.slice(0, 5) + '.' + value.slice(5, 9);
+            }
+            input.value = value;
+        }
+        
+        function validateAddressInput(event) {
+            const char = String.fromCharCode(event.which);
+            // Разрешенные символы: кириллица, цифры, точки, запятые и пробелы
+            if (!/[а-яА-ЯёЁ0-9., ]/.test(char)) {
+                event.preventDefault();
+            }
+        }
+
+        function validateAddressFormat() {
+            const addressInput = document.getElementById("addressInput").value;
+
+            // Условия валидации
+            const hasLetter = /[а-яА-ЯёЁ]/.test(addressInput); // Проверка на наличие букв кириллицы
+            const hasDigit = /d/.test(addressInput); // Проверка на наличие цифр
+            const hasSpecialChar = /[.,]/.test(addressInput); // Проверка на наличие специальных символов
+            const isNotOnlyDigits = !/^d+$/.test(addressInput); // Проверка на отсутствие только цифр
+            const isNotOnlySpecialChars = !/^[.,s]+$/.test(addressInput); // Проверка на отсутствие только специальных символов и пробелов
+
+            if (!hasLetter || (!hasDigit && !hasSpecialChar) || isNotOnlyDigits || isNotOnlySpecialChars) {
+                alert("Введите корректный адрес, используя кириллицу, цифры и специальные символы (точка и запятая).");
+                return false;
+            }
+            return true;
+
+            function goBack() {
+            window.history.back(); // Возвращаемся на предыдущую страницу
+            }
+
+        }
+
+    </script>
+</body>
+</html>

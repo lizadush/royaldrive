@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mclaren</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        margin-top: 26%;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000),
+          url(page1_background.jpg);
+        background-size: 1920px 500px;
+        background-repeat: no-repeat;
+      }
+      
+      h4 {
+        position: absolute;
+        top: -100px;
+      }
+    
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        height: auto;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      td{
+            margin-top: 2%;
+            width: 40vw;
+        }
+        h2 {
+            color: rgb(117, 117, 117);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+        }
+        h8{
+          color: #fefefe;
+          font-size: small;
+        }
+        h7{
+            color:rgb(56, 56, 56);
+    text-align: left;
+    font-family: fantasy;
+    font-size: 0.9cm;
+    margin-top: 1%;
+        }
+        
+        .pupupu{
+            background-color: black;
+            color: white;
+            font-size: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 2%;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+           margin: 1vh; 
+           margin-top: 0;
+            border-radius: 3cqmin;
+        }
+       .tdimg img{
+           width: 50px;
+           height: 50px;
+       }
+       .tdimgg img{
+           width: 175px;
+           height: 175px;
+       }
+       .raspsq{
+        display: flex;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 24%;
+        margin-right: 24%;
+        flex-wrap: wrap;
+       }
+       .buttonh{
+         padding-left: 0;
+      margin: 2vh 1vh;
+      width: 99%;
+    }
+    .faqs{
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 5%;
+            
+        }
+        .image-container {
+            margin-right: 20px;
+        }
+        .imgigi{
+          height: 320px;
+          width: 500px;
+          border-radius: 20px;
+        }
+        .faq-container {
+            max-width: 600px;
+        }
+        .question {
+            cursor: pointer;
+            color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.45cm;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .txt{
+          width: 80%;
+        }
+        h9{
+          color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+    <img src="logo.png" alt="Логотип">
+
+    <div class="buttonh">
+      <button class="button" onclick="document.location='index.html'">Главная</button>
+            <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+            <button class="button" onclick="document.location='persona.html'">Личный кабинет</button>
+            <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+            <button class="button" onclick="document.location='about_us.html'">О нас</button>
+            <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+            <button class="button" onclick="document.location='news.html'">Новости</button>
+  </div>
+    </div>
+    <h4>Mclaren</h4>
+
+    <div class="raspsq">
+    <div class="squares">
+      <img src="mclaren_1.jpeg" alt="Картинка 1" />
+      <h2>Mclaren 720S Spider 2022</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal1">Характеристики</button>
+        <div id="myModal1" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mclaren 720S Spider 2022</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">McLaren 720S Spyder — это захватывающее дух сочетание производительности, инноваций и удовольствия от езды под открытым небом. Его обтекаемый аэродинамичный дизайн намекает на невероятную мощность, скрывающуюся под капотом. Дизайн 720S Spyder — это симфония изгибов и углов, созданная не только для эстетики, но и для того, чтобы рассекать воздух с минимальным сопротивлением. Благодаря убирающейся жёсткой крыше Spyder легко превращается из купе в кабриолет всего за несколько секунд, предлагая непревзойденные впечатления от вождения под солнцем или звёздами. В сочетании с быстрой 7-ступенчатой коробкой передач с двойным сцеплением этот суперкар разгоняется от 0 до 100 км/ч всего за 2,8 секунды, обеспечивая потрясающее ускорение, от которого вы не сможете оторваться от сиденья.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Белый</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Полный привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>770 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>7-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>720 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+      <img src="mclaren_2.webp" alt="Картинка 2" />
+      <h2>Mclaren 720S Perfomance</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal2">Характеристики</button>
+        <div id="myModal2" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mclaren 720S Perfomance</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Когда вы думаете о суперкаре, McLaren — одна из первых марок, которая приходит на ум. И не зря — они производят одни из самых впечатляющих и быстрых автомобилей в мире. Новый McLaren 720s не является исключением. Этот автомобиль — настоящая машина для вождения, способная развивать скорость до 343 км/ч. McLaren 720s Performance оснащён двигателем V-8 с двойным турбонаддувом, мощность которого составляет поразительные 710 лошадиных сил. Этой мощности достаточно, чтобы разогнать автомобиль от 0 до 100 км/ч менее чем за три секунды. McLaren 720s Performance также оснащён семиступенчатой коробкой передач с двойным сцеплением, которая обеспечивает молниеносное переключение передач.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Черный</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Задний привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>770 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>7-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>710 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+      <img src="mclaren_3.jpg" alt="Картинка 3" />
+      <h2>Mclaren Artura 2023</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal3">Характеристики</button>
+        <div id="myModal3" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mclaren Artura 2023</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">McLaren Artura представляет собой революционный скачок вперёд в автомобильной инженерии, органично сочетая передовые гибридные технологии с чистым восторгом от высокопроизводительного суперкара. Artura оснащена новаторской гибридной силовой установкой, которая объединяет двигатель V6 с двойным турбонаддувом и электродвигатель. Эта инновационная комбинация не только обеспечивает захватывающую производительность, но и повышает эффективность, обеспечивая идеальное сочетание обоих аспектов без ущерба для удовольствия. Силовая установка McLaren Artura развивает ошеломляющую мощность, разгоняя автомобиль от 0 до 100 км/ч всего за три с небольшим секунды. Благодаря точному управлению, молниеносному ускорению и максимальной скорости, выходящей за рамки возможного, каждая поездка на Artura — это приключение, наполненное адреналином.</td>
+                        <td>Двигатель:</td>
+                        <td>V6 3.0 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Детский голубой</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Задний привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>531 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>8-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>671 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+      <img src="mclaren_4.png" alt="Картинка 4" />
+      <h2>Mclaren 570S Spyder</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal4">Характеристики</button>
+        <div id="myModal4" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mclaren 570S Spyder</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">570S, ориентированный на водителя и производительность, одинаково хорошо чувствует себя как на трассе, так и на открытой дороге. Обладая самым лёгким весом в своём классе и самым высоким соотношением мощности к весу, он обеспечивает мощность и острые ощущения суперкара, которые посрамили бы более дорогих конкурентов. 570S дарит захватывающие ощущения от вождения и максимальную вовлечённость водителя. Адаптивные амортизаторы и стабилизаторы поперечной устойчивости в сочетании с подвеской на двойных поперечных рычагах делают 570S невероятно маневренным и отзывчивым на каждое действие водителя. На панели Active Dynamics можно выбрать режим «Нормальный», «Спорт» или «Трасса», что позволяет оптимально настроить автомобиль для любых дорожных или гоночных условий. При разгоне с места McLaren 570S разгоняется до 100 км/ч (62 мили в час) всего за 3,2 секунды, а до 200 км/ч (124 мили в час) — за ошеломляющие 9,5 секунды.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 3.8 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Оранжевый</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Задний привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>600 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>7-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>570 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="txt">
+    <h7>Катайтесь с наслаждением! Чем известны Mclaren?</h7><br><br>
+
+      <h9>Автомобили McLaren известны своим выдающимся сочетанием высоких технологий, производительности и уникального дизайна.
+       Бренд был основан в 1963 году и изначально специализировался на гонках, что значительно повлияло на его дорожные модели. 
+       McLaren славится своими инновациями в области аэродинамики, легких материалов и мощных двигателей. Модели, такие как McLaren F1, P1 и 720S, стали иконами в мире суперкаров
+        благодаря своим выдающимся характеристикам, скорости и эксклюзивности. 
+      Кроме того, McLaren активно участвует в Формуле-1, что подчеркивает их приверженность к высоким стандартам инженерии и производительности.</h9><br><br>
+
+      <h7>Почему стоит арендовать автомобиль McLaren?</h7><br><br>
+      
+      <h9>Аренда автомобиля McLaren — это возможность испытать настоящую роскошь и мощь на дорогах. 
+      Эти суперкары предлагают невероятную скорость и динамику, что делает каждую поездку незабываемой. 
+      Арендуя McLaren, вы получаете доступ к передовым технологиям и уникальному дизайну, который привлекает 
+      взгляды и вызывает восхищение. Это отличный способ добавить адреналина в ваше путешествие или особое мероприятие, будь то свадьба, 
+      юбилей или просто желание провести день с ветерком. Кроме того, аренда McLaren позволяет вам наслаждаться автомобилем мечты без необходимости его покупки и обслуживания,
+       что делает этот опыт доступным для каждого автолюбителя.</h9><br><br>
+
+      <h7>Как арендовать автомобиль Mclaren?</h7><br><br>
+      <h9>
+        Аренда автомобиля McLaren на нашем сайте — это просто и удобно! Следуйте этим простым шагам, чтобы забронировать свой суперкар:
+
+1. Выберите модель: Перейдите в раздел "Аренда автомобилей" и выберите желаемую модель McLaren из нашего ассортимента. У нас есть различные варианты, чтобы удовлетворить любые ваши предпочтения.
+2. Укажите даты: Введите даты начала и окончания аренды. Убедитесь, что выбранный вами автомобиль доступен в указанные сроки.
+3. Заполните форму: Заполните необходимые данные, включая ваше имя, контактную информацию и водительские права. Это поможет нам быстро обработать вашу заявку.
+4. Выберите дополнительные услуги: При желании вы можете добавить дополнительные услуги, такие как страховка, доставка автомобиля или навигационная система.
+5. Подтверждение бронирования: После заполнения формы вы получите подтверждение на указанный вами адрес электронной почты. Мы свяжемся с вами для уточнения деталей и окончательной проверки.
+6. Получите ключи: В день аренды приезжайте в наш офис или выберите доставку автомобиля на нужный адрес. Мы проведем краткий инструктаж и передадим вам ключи от вашего McLaren!
+Наслаждайтесь незабываемыми моментами за рулем одного из самых впечатляющих автомобилей в мире! Если у вас возникнут вопросы, наша команда поддержки всегда готова помочь.
+      </h9><br><br>
+      
+  </div>
+
+  <div class="faqs">
+
+    <div class="image-container">
+        <img class='imgigi' src="mclaren_faq.webp" alt="Фотография" />
+    </div>
+    
+    <div class="faq-container">
+        <h2>FAQs</h2>
+
+        <h7>Mclaren FAQs</h7>
+        
+        <div>
+            <div class="question" onclick="toggleAnswer(1)">Какова стоимость аренды автомобиля марки Mclaren на сегодняшний день?</div>
+            <div class="answer" id="answer-1">Наша компания предлагает автомобили Mclaren на прокат по цене от 75 000 до 100 000 рублей в день.</div>
+        </div>
+    
+        <div>
+            <div class="question" onclick="toggleAnswer(2)">Какой тип автомобиля можно взять напрокат на сайте RoyalDrive.com?</div>
+            <div class="answer" id="answer-2">В настоящий момент мы предлагаем модели Mclaren 570s, Mclaren 570s Spider, Mclaren 720s, Mclaren 720s Perfomance.</div>
+        </div>
+    
+        <div>
+            <div class="question" onclick="toggleAnswer(3)">Какие дополнительные услуги предоставляет RoyalDrive если я арендую автомобиль Mclaren?</div>
+            <div class="answer" id="answer-3">При необходимсоти предоставляется детское кресло и водитель.</div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="pupupu">
+      <table>
+          <tr>
+              <th>
+                  <img align="left" src="logo.png" alt="Логотип">
+              </th>
+              <th>
+                  <h2>
+                      Наши бренды
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Полезные ссылки
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Связаться с нами
+                  </h2>
+              </th>
+          </tr>
+          <tr>
+              <td align="left">
+                  <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                       для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                        тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+              </td>
+              <td align="left">
+                  
+                <a href="page4.html"> Bentley </a><br><br>
+                <a href="page1.html"> Mclaren </a><br><br>
+                <a href="page2.html"> Mercedes </a><br><br>
+                <a href="page8.html"> Porshe </a><br><br>
+                <a href="page7.html"> Lamborghini </a><br><br>
+                <a href="page3.html"> BMW </a><br><br>
+                <a href="page6.html"> Ferrari </a><br><br>
+
+            </td>
+            <td align="left">
+                <a href="index.html"> Представленные марки </a><br><br>
+                <a href="news.html"> Новости </a><br><br>
+                <a href="about_us.html"> О нас </a><br><br>
+                <a href="persona.html"> Личный кабинет </a><br><br>
+                <a href="page10.html"> Оформление заказа </a><br><br>
+                <a href="maps.html"> Наши офисы </a><br><br>
+                <a href="special.html"> Специальные предложения </a><br><br>
+            </td>
+            <td align="left">
+                    <a> +7-(904)-546-34-23 </a><br><br>
+                    <a> +7-(904)-546-34-23 </a><br><br>
+                    <a href="about_us.html"> О нас </a><br><br>
+                    <a href="persona.html"> Личный кабинет </a><br><br>
+            </td>
+          </tr>
+      </table>
+
+      <table>
+          <tr >
+              <td class="tdimgg">
+                  <img align="left" src="logo24_7.jpg" alt="Логотип">
+              </td>
+              <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+              <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+              <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+              <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+              <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+              <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+          </tr>
+      </table>
+      
+      <table>
+              <tr>
+                  <td>
+                      <h8>Политика конфиденциальности<h8>
+                  </td>
+                  <td>
+                      <h8>@2025 Аренда автомобилей класса люкс. Все права защищены.</h8>
+                  </td>
+                  <td><h8> Instagram    VK    YouTube </h8>
+                  </td>
+              </tr>
+      </table>
+  <div>
+  </footer>
+
+  <script>
+    let lastOpenedAnswer = null;
+    
+    function toggleAnswer(answerId) {
+        const answer = document.getElementById(`answer-${answerId}`); // Исправлено
+    
+        // Закрываем предыдущий открытый ответ
+        if (lastOpenedAnswer && lastOpenedAnswer !== answer) {
+            lastOpenedAnswer.style.display = 'none';
+        }
+    
+        // Переключаем текущий ответ
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            lastOpenedAnswer = null; // Сбрасываем открытый ответ
+        } else {
+            answer.style.display = 'block';
+            lastOpenedAnswer = answer; // Запоминаем открытый ответ
+        }
+    }
+    </script>
+
+    <script src="dialog.js"></script>
+  </body>
+</html>

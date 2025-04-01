@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rolls Royce</title>
+    <style>
+       body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        margin-top: 26%;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000),
+          url(page9_background.jpg);
+        background-size: 1920px 500px;
+        background-repeat: no-repeat;
+      }
+      
+      h4 {
+        position: absolute;
+        top: -100px;
+      }
+    
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        height: auto;
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
+      td{
+            margin-top: 2%;
+            width: 40vw;
+        }
+        h2 {
+            color: rgb(117, 117, 117);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+        }
+        h8{
+          color: #fefefe;
+          font-size: small;
+        }
+        h7{
+          color:rgb(56, 56, 56);
+    text-align: left;
+    font-family: fantasy;
+    font-size: 0.9cm;
+    margin-top: 1%;
+        }
+        .pupupu{
+          background-color: black;
+            color: white;
+            font-size: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 2%;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+           margin: 1vh; 
+           margin-top: 0;
+            border-radius: 3cqmin;
+        }
+       .tdimg img{
+           width: 50px;
+           height: 50px;
+       }
+       .tdimgg img{
+           width: 175px;
+           height: 175px;
+       }
+       .raspsq{
+        display: flex;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 24%;
+        margin-right: 24%;
+        flex-wrap: wrap;
+       }
+       .buttonh{
+         padding-left: 0;
+      margin: 2vh 1vh;
+      width: 99%;
+    }
+    .faqs{
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 5%;
+            
+        }
+        .image-container {
+            margin-right: 20px;
+        }
+        .imgigi{
+          height: 320px;
+          width: 500px;
+          border-radius: 20px;
+        }
+        .faq-container {
+            max-width: 600px;
+        }
+        .question {
+            cursor: pointer;
+            color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.45cm;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: solid black 1px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .txt{
+          width: 80%;
+        }
+        h9{
+          color: rgb(46, 46, 46);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <img src="logo.png" alt="Логотип">
+  
+      <div class="buttonh">
+        <button class="button" onclick="document.location='index.html'">Главная</button>
+            <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+            <button class="button" onclick="document.location='persona.html'">Личный кабинет</button>
+            <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+            <button class="button" onclick="document.location='about_us.html'">О нас</button>
+            <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+            <button class="button" onclick="document.location='news.html'">Новости</button>
+    </div>
+      </div>
+
+    <h4>Rolls Royce</h4>
+
+    <div class="raspsq">
+    <div class="squares">
+      <img src="Rolls-Royce_1.webp" alt="Картинка 1" />
+      <h2>Rolls Royce Culinan</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal1">Характеристики</button>
+        <div id="myModal1" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mercedes-Benz AMG G63 800 Widestar от Brabus</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Mercedes-Benz AMG G63 800 Widestar от Brabus — это ультрароскошный высокопроизводительный внедорожник, который по-новому определяет понятия «мощность» и «стиль». Благодаря обвесу Brabus Widestar с более широкими крыльями, нестандартными бамперами и характерными колёсами он выглядит внушительно. Его 4,0-литровый двигатель V8 с двойным турбонаддувом, настроенный Brabus, развивает поразительную мощность в 800 лошадиных сил, обеспечивая исключительное ускорение и проходимость. Интерьер роскошно обставлен с использованием изготовленных на заказ материалов, кожаной обивки и передовых технологий, обеспечивающих роскошную и комфортную езду. Сочетая в себе непревзойденную мощность, изысканную роскошь и неповторимый дизайн, AMG G63 800 Widestar от Brabus является вершиной автомобильного мастерства.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Зеленый</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Полный привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>1000 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>9-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>800 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+      <img src="Rolls-Royce_2.webp" alt="Картинка 2" />
+      <h2>Rolls Royce Culinan Mansory</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal2">Характеристики</button>
+        <div id="myModal2" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mercedes-Benz AMG GT63 S</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Mercedes-Benz AMG GT63 S — это потрясающий спортивный седан, сочетающий в себе эстетику и первоклассную инженерию. GT63 S — это автомобиль, выпускаемый подразделением Mercedes AMG, специализирующимся на высокопроизводительных автомобилях, с мощным 4,0-литровым двигателем V8 с двойным турбонаддувом, обеспечивающим непревзойденную скорость и точность. Экстерьер AMG GT63 S отличается элегантным и аэродинамичным дизайном, а интерьер — роскошью и улучшенными технологическими характеристиками, которые являются первоклассными для автомобилей этой марки.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 с турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Белый</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Передний подключаемый привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>900 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>9-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>630 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+        <img src="Rolls-Royce_3.webp" alt="Картинка 3" />
+        <h2>Rolls Royce Down Black</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal3">Характеристики</button>
+        <div id="myModal3" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mercedes-GLC 63S AMG Coupe</h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Мощная внешность и неподвластная времени элегантность: Mercedes-GLC 63S AMG с мускулистой задней частью, широкой колеей и большими колесами готов к старту. Но этот динамичный гоночный симбиоз утонченной динамики вождения и чистокровного автоспорта — не только визуальное украшение. Благодаря специальным компонентам AMG Mercedes-GLC 63S AMG развивает максимальную скорость 317 км/ч и разгоняется от 0 до 100 км/ч за 3,7 секунды. Новый дизайн светодиодных фар высокой производительности и особенно новый дизайн дневных ходовых огней делают переднюю часть Mercedes-GLC 63S AMG еще более впечатляющей, чем до рестайлинга. Классический дизайн с покатой задней частью включает светодиодные задние фонари с затемненными элементами внутри. Потрясающий новый дизайн боковых юбок с более четким контуром и дополнительными декоративными элементами открывает мощные плечи.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 с двойным турбонаддувом</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Матовый серый</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Полный привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>700 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>8-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>510 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+
+    <div class="squares">
+        <img src="Rolls-Royce_4.webp" alt="Картинка 4" />
+        <h2>Rolls Royce Wraith Black Badge</h2>
+      <div class="flex">
+        <button class="buttonu" id="openModal4">Характеристики</button>
+        <div id="myModal4" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h5>Mercedes-Benz AMG C63 </h5>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Mercedes-Benz AMG C63 — это высокопроизводительный роскошный седан, воплощающий в себе дух инженерного совершенства AMG. Его смелый и агрессивный дизайн отличается характерной решёткой AMG, мускулистыми линиями и четырьмя выхлопными трубами, что придаёт ему мощный вид на дороге. Под капотом AMG C63 установлен 4,0-литровый двигатель V8 с двойным турбонаддувом, созданный вручную, который обеспечивает захватывающую дух мощность и ускорение, позволяя разгоняться от 0 до 100 км/ч всего за несколько секунд. Усовершенствованная подвеска AMG и ориентированная на производительность система полного привода обеспечивают исключительную управляемость и маневренность, гарантируя динамичное вождение. Внутри AMG C63 предлагает роскошный и технологичный салон с высококачественными материалами, спортивными сиденьями и новейшими информационно-развлекательными системами, обеспечивающими комфорт и возможность подключения.</td>
+                        <td>Двигатель:</td>
+                        <td>V8 4.0 л.</td>
+                    </tr>
+                    <tr>
+                        <td>Места:</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет:</td>
+                        <td>Nardo Grey</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмиссия:</td>
+                        <td>Передний подключаемый привод</td>
+                    </tr>
+                    <tr>
+                        <td>Крутящий момент:</td>
+                        <td>752 Нм</td>
+                    </tr>
+                    <tr class="tr">
+                        <td>Коробка передач:</td>
+                        <td>9-ступенчатая автоматическая</td>
+                    </tr>
+                    <tr>
+                        <td>Мощность:</td>
+                        <td>671 л.с.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Нажмите на крестик или вне области окна, чтобы закрыть его.</p>
+          </div>
+        </div>
+        <button class="buttonu" onclick="document.location='orders.html'">
+          Оформить заказ
+        </button>
+      </div>
+    </div>
+ </div>
+
+  <div class="txt">
+    <h7>Катайтесь с наслаждением! Чем известны Rolls-Royce?</h7><br><br>
+
+<h9>Rolls-Royce — это символ роскоши, элегантности и высочайшего качества в мире автомобилей. Бренд был основан в 1904 году Чарльзом Роллсом и Генри Ройсом и с тех пор стал эталоном автомобильного искусства и инженерного мастерства. 
+  Rolls-Royce известна своими эксклюзивными моделями, такими как Phantom, Ghost и Cullinan, которые предлагают непревзойденный комфорт, выдающееся внимание к деталям и индивидуальные настройки. 
+  Каждая машина создается вручную, что делает ее уникальной и неповторимой. Rolls-Royce также ассоциируется с высококлассным обслуживанием клиентов, что подчеркивает их приверженность к созданию исключительного опыта для владельцев.</h9><br><br>
+
+<h7>Почему стоит арендовать автомобиль Rolls-Royce?</h7><br><br>
+
+<h9>Аренда автомобиля Rolls-Royce — это возможность насладиться истинной роскошью и комфортом на высшем уровне. 
+  Эти автомобили предлагают непревзойденное качество и внимание к деталям, что делает каждую поездку особенной. 
+  Арендуя Rolls-Royce, вы получаете доступ к автомобилю, который является не только средством передвижения, но и произведением искусства. 
+  Это идеальный выбор для особых мероприятий, таких как свадьбы, юбилеи или деловые встречи, где важен не только стиль, но и статус. 
+  Кроме того, аренда Rolls-Royce позволяет вам испытать автомобиль мечты без необходимости его покупки и обслуживания, что делает этот опыт доступным для каждого.</h9><br><br>
+      
+  </div>
+
+  <div class="faqs">
+
+    <div class="image-container">
+        <img class='imgigi' src="rolls_faq.jpg" alt="Фотография" />
+    </div>
+    
+    <div class="faq-container">
+        <h2>FAQs</h2>
+
+        <h7>Rolls Royce FAQs</h7>
+        
+        <div>
+            <div class="question" onclick="toggleAnswer(1)">Какова стоимость аренды автомобиля марки Rolls Royce  на сегодняшний день?</div>
+            <div class="answer" id="answer-1">Наша компания предлагает автомобили Rolls Royce  на прокат по цене от 200 000 до 500 000 рублей в день.</div>
+        </div>
+    
+        <div>
+            <div class="question" onclick="toggleAnswer(2)">Сколько моделей автомобилей Rolls Royce  представлено на сайте RoyalDrive.com?</div>
+            <div class="answer" id="answer-2">В настоящий момент мы предлагаем 4 модели.</div>
+        </div>
+    
+        <div>
+            <div class="question" onclick="toggleAnswer(3)">Какие дополнительные услуги предоставляет RoyalDrive если я арендую автомобиль Rolls Royce?</div>
+            <div class="answer" id="answer-3">При необходимсоти предоставляется детское кресло и водитель.</div>
+        </div>
+    </div>
+    </div>
+
+
+    <footer class="pupupu">
+      <table>
+          <tr>
+              <th>
+                  <img align="left" src="logo.png" alt="Логотип">
+              </th>
+              <th>
+                  <h2>
+                      Наши бренды
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Полезные ссылки
+                  </h2>
+              </th>
+              <th>
+                  <h2>
+                      Связаться с нами
+                  </h2>
+              </th>
+          </tr>
+          <tr>
+              <td align="left">
+                  <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                       для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                        тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+              </td>
+              <td align="left">
+                  
+                <a href="page4.html"> Bentley </a><br><br>
+                <a href="page1.html"> Mclaren </a><br><br>
+                <a href="page2.html"> Mercedes </a><br><br>
+                <a href="page8.html"> Porshe </a><br><br>
+                <a href="page7.html"> Lamborghini </a><br><br>
+                <a href="page3.html"> BMW </a><br><br>
+                <a href="page6.html"> Ferrari </a><br><br>
+
+            </td>
+            <td align="left">
+                <a href="index.html"> Представленные марки </a><br><br>
+                <a href="news.html"> Новости </a><br><br>
+                <a href="about_us.html"> О нас </a><br><br>
+                <a href="persona.html"> Личный кабинет </a><br><br>
+                <a href="page10.html"> Оформление заказа </a><br><br>
+                <a href="maps.html"> Наши офисы </a><br><br>
+                <a href="special.html"> Специальные предложения </a><br><br>
+            </td>
+            <td align="left">
+                    <a> +7-(904)-546-34-23 </a><br><br>
+                    <a> +7-(904)-546-34-23 </a><br><br>
+                    <a href="about_us.html"> О нас </a><br><br>
+                    <a href="persona.html"> Личный кабинет </a><br><br>
+            </td>
+          </tr>
+      </table>
+
+      <table>
+          <tr >
+              <td class="tdimgg">
+                  <img align="left" src="logo24_7.jpg" alt="Логотип">
+              </td>
+              <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+              <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+              <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+              <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+              <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+              <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+          </tr>
+      </table>
+      
+      <table>
+              <tr>
+                  <td>
+                    <h8>Политика конфиденциальности<h8>
+                    </td>
+                    <td>
+                        <h8>@2025 Аренда автомобилей класса люкс. Все права защищены.</h8>
+                    </td>
+                    <td><h8> Instagram    VK    YouTube </h8>
+                  </td>
+              </tr>
+      </table>
+  <div>
+  </footer>
+  <script>
+    let lastOpenedAnswer = null;
+
+  function toggleAnswer(answerId) {
+    const answer = document.getElementById(`answer-${answerId}`); // Исправлено
+
+    // Закрываем предыдущий открытый ответ
+    if (lastOpenedAnswer && lastOpenedAnswer !== answer) {
+        lastOpenedAnswer.style.display = 'none';
+    }
+
+    // Переключаем текущий ответ
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        lastOpenedAnswer = null; // Сбрасываем открытый ответ
+    } else {
+        answer.style.display = 'block';
+        lastOpenedAnswer = answer; // Запоминаем открытый ответ
+    }
+}
+</script>
+
+    <script src="dialog.js"></script>
+  </body>
+</html>

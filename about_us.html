@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>О нас</title>
+    <style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        margin-top: 26%;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), #000), 
+          url(about_us_background.jpg);
+        background-size: 1920px 500px;
+        background-repeat: no-repeat;
+      }
+      .buttonh{
+         padding-left: 0;
+      margin: 2vh 1vh;
+      width: 99%;}
+        h3 {
+            color: rgb(66, 66, 66);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+        }
+        td{
+            margin-top: 2%;
+            width: 40vw;
+        }
+        h2 {
+            color: rgb(117, 117, 117);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.5cm;
+            text-align: left;
+            width: fit-content;
+        }
+        h4 {
+        position: absolute;
+        top: -100px;
+      }
+        h7{
+            color: #fefefe;
+            font-size: small;
+        }
+        .pupupu{
+            background-color: black;
+            color: white;
+            font-size: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 2%;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 2%;
+            margin: 1vh;
+            border-radius: 3cqmin;
+        }
+       .tdimg img{
+           width: 50px;
+           height: 50px;
+       }
+       .tdimgg img{
+           width: 175px;
+           height: 175px;
+       }
+       .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+            margin-bottom: 3%;
+            gap: 0;
+            height: 50vh;
+        }
+        .containers {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+            margin-bottom: 3%;
+            gap: 0;
+            height: 32vh;
+        }
+        .cards {
+            position: relative;
+            margin: 40px;
+            overflow: hidden;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            margin: 60px;
+            overflow: hidden;
+        }
+
+        .image {
+            width: 400px; 
+            height: 500px;/* Ширина картинки */
+            transition: transform 0.3s;
+            border-radius: 20px;
+        }
+        .images {
+            width: 400px; 
+            height: 300px;/* Ширина картинки */
+            transition: transform 0.3s;
+            border-radius: 10px;
+        }
+        .overlay {
+            position: absolute;
+            border-radius: 20px;
+            margin-top: 5px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный цвет */
+        }
+        
+        .text {
+            position: absolute;
+            transition: color 0.5s;
+            left: 2vw;
+            right: 1vw;
+            top: 4vw;
+            font-size: 30px; /* Начальный размер текста */
+            color: white; /* Цвет текста */
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .date_new {
+            position: absolute;
+            left: 1vw;
+            bottom: 11vw;
+            font-size: 13px; /* Начальный размер текста */
+            transition: font-size 0.3s;
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 5px;
+            color: white; /* Цвет текста */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .arrow {
+            position: absolute;
+            transition: color 0.5s;
+            right: 2vw;
+            bottom: 2vw;
+            font-size: 35px;
+            transition: transform 0.3s;
+            color: white; /* Цвет стрелочки */
+        }
+
+        .card:hover .text {
+            color:rgb(255, 177, 41);
+        }
+
+        .card:hover .arrow {
+            transform: rotate(90deg);
+            color:rgb(255, 177, 41); /* Поворот стрелочки при наведении */
+        }
+        h1{
+            font-size: 1cm;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #464646f3;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-weight: 100;
+        }
+        h5{
+            font-size: 0.5cm;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #464646f3;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-weight: 100;
+    
+        }
+  .acls{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: rgb(70, 70, 70);
+    padding: 20px;
+    border-bottom: rgb(70, 70, 70) 2px solid;
+    
+  }
+  .raspimg{
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  .imgg{
+    width: 400px;
+    height: 200px;
+  }
+  .vid {
+    height: 70%;
+    width: 50%;
+    margin: 3% 25% 3% 25%;
+    border-radius: 20px;
+  }
+    </style>
+</head>
+<body onload="document.getElementById('loginModal').style.display='block'">
+    <div class="menu">
+        <img src="logo.png" alt="Логотип">
+    
+        <div class="buttonh">
+            <button class="button" onclick="document.location='index.html'">Главная</button>
+            <button class="button" onclick="document.location='maps.html'">Наши офисы</button>
+            <button class="button" onclick="document.location='persona.html'">Личный кабинет</button>
+            <button class="button" onclick="document.location='page10.html'">Оформление заказа</button>
+            <button class="button" onclick="document.location='about_us.html'">О нас</button>
+            <button class="button" onclick="document.location='special.html'">Специальные предложения</button>
+            <button class="button" onclick="document.location='news.html'">Новости</button>
+      </div>
+        </div>
+  
+      <h4>О нас</h4>
+
+      <div class="raspimg"><img class="imgg" src="about_us_rosp.png" alt="Логотип"></div>
+
+      <h1>Генеральный директор компании по аренде роскошных автомобилей в России</h1>
+
+      <h5>CEO стал новатором в сфере аренды роскошных автомобилей и суперкаров, предлагая клиентам по всей России прикоснуться к роскошному образу жизни</h5>
+
+      <div class="videorasp"><video class="vid" src="car_background.mp4" type="video/mp4" autoplay muted loop></video></div>
+
+      <h1>Призы & Награды</h1>
+
+      <div class="container">
+        <div class="row">
+            <div class="card">
+                <img src="about_us_prize_1.jpeg" alt="Image 1" class="image">
+                <div class="overlay"></div>
+                <div class="text">Prized for 2018 World Luxury Car...</div>
+                <div class="arrow">▲</div>
+            </div>
+            
+            <div class="card">
+                <img src="about_us_prize_2.jpg" alt="Image 2" class="image">
+                <div class="overlay"></div>
+                <div class="text">Award for openning the best office...</div>
+                <div class="arrow">▲</div>
+            </div>
+        </div></div>
+        <h1>Пресса</h1>
+        <div class="containers">
+            <div class="row">
+                <div class="cards">
+                    <img src="about_us_news_1.jpg" alt="Image 1" class="images">
+                </div>
+                
+                <div class="cards">
+                    <img src="about_us_news_2.jpg" alt="Image 2" class="images">
+                </div>
+
+                <div class="cards">
+                    <img src="about_us_news_3.jpg" alt="Image 2" class="images">
+                </div>
+            </div></div>
+
+    </div>
+
+      <footer class="pupupu">
+        <table>
+            <tr>
+                <th>
+                    <img align="left" src="logo.png" alt="Логотип">
+                </th>
+                <th>
+                    <h2>
+                        Наши бренды
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Полезные ссылки
+                    </h2>
+                </th>
+                <th>
+                    <h2>
+                        Связаться с нами
+                    </h2>
+                </th>
+            </tr>
+            <tr>
+                <td align="left">
+                    <a> RoyalDrive — это премиум-сервис аренды автомобилей, предлагающий своим клиентам широкий выбор элитных автомобилей
+                         для любого случая. Мы понимаем, что роскошь и комфорт имеют первостепенное значение, поэтому каждый наш автомобиль проходит
+                          тщательную проверку и обслуживание, чтобы гарантировать безупречное качество.</a>
+                </td>
+                <td align="left">
+                    
+                  <a href="page4.html"> Bentley </a><br><br>
+                  <a href="page1.html"> Mclaren </a><br><br>
+                  <a href="page2.html"> Mercedes </a><br><br>
+                  <a href="page8.html"> Porshe </a><br><br>
+                  <a href="page7.html"> Lamborghini </a><br><br>
+                  <a href="page3.html"> BMW </a><br><br>
+                  <a href="page6.html"> Ferrari </a><br><br>
+  
+              </td>
+              <td align="left">
+                  <a href="index.html"> Представленные марки </a><br><br>
+                  <a href="news.html"> Новости </a><br><br>
+                  <a href="about_us.html"> О нас </a><br><br>
+                  <a href="persona.html"> Личный кабинет </a><br><br>
+                  <a href="page10.html"> Оформление заказа </a><br><br>
+                  <a href="maps.html"> Наши офисы </a><br><br>
+                  <a href="special.html"> Специальные предложения </a><br><br>
+              </td>
+              <td align="left">
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a> +7-(904)-546-34-23 </a><br><br>
+                      <a href="about_us.html"> О нас </a><br><br>
+                      <a href="persona.html"> Личный кабинет </a><br><br>
+              </td>
+            </tr>
+        </table>
+  
+        <table>
+            <tr >
+                <td class="tdimgg">
+                    <img align="left" src="logo24_7.jpg" alt="Логотип">
+                </td>
+                <td class="tdimg"><img src="mastercard.webp" alt="Фотография 1"></td>
+                <td class="tdimg"><img src="mir.webp" alt="Фотография 2"></td>
+                <td class="tdimg"><img src="americanexpress.webp" alt="Фотография 3"></td>
+                <td class="tdimg"><img src="swift.webp" alt="Фотография 4"></td>
+                <td class="tdimg"><img src="visa.webp" alt="Фотография 5"></td>
+                <td class="tdimg"><img src="paypal.webp" alt="Фотография 6"></td>
+            </tr>
+        </table>
+        
+        <table>
+                <tr>
+                    <td>
+                      <h8>Политика конфиденциальности<h8>
+                      </td>
+                      <td>
+                          <h8>@2025 Аренда автомобилей класса люкс. Все права защищены.</h8>
+                      </td>
+                      <td><h8> Instagram    VK    YouTube </h8>
+                    </td>
+                </tr>
+        </table>
+    <div>
+    </footer>
